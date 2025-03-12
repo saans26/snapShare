@@ -14,8 +14,8 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
-    public Post createPost(Post post, User user) {
-        post.setUser(user);
+    public Post createPost(Post post) {
+//        post.setUser(user);
         return postRepository.save(post);
     }
 

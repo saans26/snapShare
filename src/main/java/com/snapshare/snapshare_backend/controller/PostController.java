@@ -26,7 +26,7 @@ public class PostController {
     @PostMapping("/post")
     public String createPost(@ModelAttribute Post post, @AuthenticationPrincipal User user) {
         post.setUser(user);
-        postService.createPost(post, user);
+        postService.createPost(post);
         return "redirect:/feed";
     }
 }
