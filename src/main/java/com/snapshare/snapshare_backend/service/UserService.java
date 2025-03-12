@@ -16,7 +16,7 @@ public class UserService {
 
     public User registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("ROLE_USER");
+        user.setRole("ROLE_USER"); // Default role for new users
         return userRepository.save(user);
     }
 }

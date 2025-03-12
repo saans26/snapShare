@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Feed - SnapShare</title>
+</head>
+<body>
+<h1>Your Feed</h1>
+<form th:action="@{/post}" method="post" th:object="${post}">
+    <div>
+        <label for="text">What's on your mind?</label>
+        <textarea id="text" name="text" th:field="*{text}" required></textarea>
+    </div>
+    <button type="submit">Post</button>
+</form>
+
+<div th:each="post : ${posts}">
+    <p th:text="${post.text}"></p>
+    <small th:text="${post.createdAt}"></small>
+</div>
+</body>
+</html>
